@@ -106,8 +106,15 @@ def show(st):
     if not st:
         print("  (no status reply)")
         return
-    print(f"  power(a1)={'ON' if st.get('a1') else 'OFF'}  speed(d1)={st.get('d1')}  mode(c1)={st.get('c1')}")
-    print(f"  other switches: a2={st.get('a2')} a3={st.get('a3')} a4={st.get('a4')} a5={st.get('a5')}")
+    angle = {0: "30°", 1: "60°", 2: "120°"}.get(st.get("c1"), f"c1={st.get('c1')}")
+    timer = st.get("d2", 0)
+    print(f"  電源:     {'開 ON' if st.get('a1') else '關 OFF'}")
+    print(f"  風速:     {st.get('d1')} / 7")
+    print(f"  上下擺頭: {'開' if st.get('a2') else '關'}")
+    print(f"  左右擺頭: {'開' if st.get('a5') else '關'}  (角度 {angle})")
+    print(f"  睡眠風:   {'開' if st.get('a3') else '關'}")
+    print(f"  AI 風:    {'開' if st.get('a4') else '關'}")
+    print(f"  定時:     {('關' if not timer else str(timer)+' 小時')}")
     print(f"  raw={st.get('_raw')}")
 
 
