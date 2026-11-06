@@ -82,7 +82,7 @@ FUNCTION_MAP = {
     "power":           {"id": "a1", "kind": "switch", "status": "proven",
                         "desc": "Power (turning off zeroes d1; on restores it)"},
     "speed":           {"id": "d1", "kind": "level", "range": (1, 7), "status": "proven",
-                        "desc": "Fan speed, 7 levels"},
+                        "desc": "Fan speed, 7 levels (app '1/2/4' wind-power buttons are display-only)"},
     "swing_vertical":  {"id": "a2", "kind": "switch", "status": "proven",
                         "desc": "Vertical swing (up/down oscillation)"},
     "swing_horizontal":{"id": "a5", "kind": "switch", "status": "proven",
@@ -94,7 +94,7 @@ FUNCTION_MAP = {
     "swing_angle":     {"id": "c1", "kind": "enum", "range": (0, 2), "status": "proven",
                         "desc": "Horizontal swing angle: 0=30deg, 1=60deg, 2=120deg"},
     "timer":           {"id": "d2", "kind": "level", "range": (0, 255), "status": "proven",
-                        "desc": "Timer hours (also mirrors into d3; 0=off)"},
+                        "desc": "Timer: total hours (0=off), mirrors into d3; app '1/2/4h' checkboxes just sum to one total"},
 }
 
 # Registers that are writable but produced NO observable effect on this model

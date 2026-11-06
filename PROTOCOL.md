@@ -55,13 +55,13 @@ you can re-query `3004` and confirm the change — a software-observable state o
 | Function | uart id | Type | Confidence | Notes |
 |---|---|---|---|---|
 | Power | `a1` | switch 0/1 | **proven** | turning off zeroes `d1`; on restores last speed (power-gate effect) |
-| Speed | `d1` | level 1–7 | **proven** | matches the "7-speed" spec |
+| Speed | `d1` | level 1–7 | **proven** | matches the "7-speed" spec; continuous level (the app's "1/2/4" wind-power buttons are just a display shortcut, the firmware only stores a 1–7 value here) |
 | Vertical swing | `a2` | switch 0/1 | **proven** | up/down oscillation |
 | Horizontal swing | `a5` | switch 0/1 | **proven** | left/right oscillation on/off (angle set separately) |
 | Sleep-wind mode | `a3` | switch 0/1 | **proven** | |
 | AI-wind mode | `a4` | switch 0/1 | **proven** | |
 | Swing angle | `c1` | enum | **proven** | 0=30°, 1=60°, 2=120° |
-| Timer | `d2` | hours | **proven** | sleep timer in hours; 0=off (value mirrors into `d3`) |
+| Timer | `d2` | hours | **proven** | sleep timer, stored as the total number of hours (0=off); value mirrors into `d3`. The app's "1/2/4 h" checkboxes are just a UI that adds up to a single total — the firmware stores that sum, not a bitmask |
 | (no effect) | `a6`–`a8`, `b1`–`b4`, `c2` | — | confirmed no-op | writable but no observable behaviour |
 
 All functions above were confirmed by hardware testing (eyeball + state oracle; see
