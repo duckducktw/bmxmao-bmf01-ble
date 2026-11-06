@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- fan: center hub + 4 curved blades, drawn in the 72x72 safe zone centered at 54,54 -->
+    <group android:pivotX="54" android:pivotY="54">
+        <!-- blade 1 (top) -->
+        <path android:fillColor="#FFFFFF"
+            android:pathData="M54,52 C50,38 50,28 54,24 C60,28 60,40 56,52 Z" />
+        <!-- blade 2 (right) -->
+        <path android:fillColor="#E8F6FF"
+            android:pathData="M56,54 C70,50 80,50 84,54 C80,60 68,60 56,56 Z" />
+        <!-- blade 3 (bottom) -->
+        <path android:fillColor="#FFFFFF"
+            android:pathData="M54,56 C58,70 58,80 54,84 C48,80 48,68 52,56 Z" />
+        <!-- blade 4 (left) -->
+        <path android:fillColor="#E8F6FF"
+            android:pathData="M52,54 C38,58 28,58 24,54 C28,48 40,48 52,52 Z" />
+        <!-- hub -->
+        <path android:fillColor="#0F1420"
+            android:pathData="M54,49 a5,5 0 1,0 0.1,0 Z" />
+        <path android:fillColor="#4FC3F7"
+            android:pathData="M54,50.5 a3.5,3.5 0 1,0 0.1,0 Z" />
+    </group>
+</vector>

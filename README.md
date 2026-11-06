@@ -70,6 +70,23 @@ only take values with power on and AI/sleep off.
 | `fanctl.py` | Command-line control tool |
 | `PROTOCOL.md` | Full protocol specification |
 
+## Android app
+
+A native Android app (Kotlin, no third-party SDK) lives in
+[`android/FanControl`](android/FanControl). It talks to the fan over BLE directly
+using the reverse-engineered protocol — a dark Material 3 UI with power, speed
+(1–7), vertical/horizontal swing, swing angle (30/60/120°), sleep / AI modes,
+and a shutdown timer, plus a scan dialog that lists only supported fans.
+
+Build a debug APK (needs JDK 17/21 + Android SDK):
+
+```bash
+cd android/FanControl
+echo "sdk.dir=$ANDROID_HOME" > local.properties
+./gradlew assembleDebug
+# -> app/build/outputs/apk/debug/app-debug.apk
+```
+
 ## How it was reverse-engineered
 
 The protocol was extracted from the EasyCon companion app's embedded WeChat

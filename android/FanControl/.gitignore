@@ -1,0 +1,16 @@
+# Android / Gradle build artifacts
+*.iml
+.gradle/
+local.properties
+.idea/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# OS
+.DS_Store

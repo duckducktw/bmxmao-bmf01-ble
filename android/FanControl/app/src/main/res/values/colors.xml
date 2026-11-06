@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#0F1420</color>
+    <color name="card">#1A2130</color>
+    <color name="card2">#222C40</color>
+    <color name="accent">#4FC3F7</color>
+    <color name="accentDim">#2A5A75</color>
+    <color name="txt">#ECEFF4</color>
+    <color name="txtDim">#9AA7B8</color>
+    <color name="on">#10C3A6</color>
+    <color name="off">#5A6676</color>
+</resources>

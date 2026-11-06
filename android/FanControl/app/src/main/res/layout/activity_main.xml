@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="風扇控制"
+            android:textColor="@color/txt"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMXMAO BMF-01 · BLE 直連"
+            android:textColor="@color/txtDim"
+            android:textSize="13sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Status card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="18dp"
+            android:layout_marginBottom="14dp">
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="尚未連線"
+                android:textColor="@color/txtDim"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp"
+                android:fontFamily="monospace" />
+            <Button
+                android:id="@+id/btnConnect"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="掃描並連線" />
+        </LinearLayout>
+
+        <!-- Power card -->
+        <LinearLayout
+            android:id="@+id/powerCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="18dp"
+            android:layout_marginBottom="14dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="電源" android:textColor="@color/txt" android:textSize="16sp" android:textStyle="bold" android:layout_marginBottom="10dp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <Button android:id="@+id/btnOn" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="6dp" android:text="開啟" />
+                <Button android:id="@+id/btnOff" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="6dp" android:text="關閉" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Speed + timer card (spinners) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="18dp"
+            android:layout_marginBottom="14dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="風速" android:textColor="@color/txt" android:textSize="16sp" android:textStyle="bold" />
+                <Spinner android:id="@+id/speedSpinner" android:layout_width="150dp" android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/card2" android:layout_marginVertical="8dp" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="定時關機" android:textColor="@color/txt" android:textSize="16sp" android:textStyle="bold" />
+                <Spinner android:id="@+id/timerSpinner" android:layout_width="150dp" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Swing card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="18dp"
+            android:layout_marginBottom="14dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="擺頭" android:textColor="@color/txt" android:textSize="16sp" android:textStyle="bold" android:layout_marginBottom="6dp" />
+            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swVertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="上下擺頭" android:textColor="@color/txt" android:paddingVertical="6dp" />
+            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swHorizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="左右擺頭" android:textColor="@color/txt" android:paddingVertical="6dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="擺頭角度" android:textColor="@color/txtDim" android:textSize="13sp" android:layout_marginTop="10dp" android:layout_marginBottom="6dp" />
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/angleGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="false">
+                <Button android:id="@+id/angle30" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="30°" />
+                <Button android:id="@+id/angle60" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="60°" />
+                <Button android:id="@+id/angle120" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="120°" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+        </LinearLayout>
+
+        <!-- Mode card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="18dp"
+            android:layout_marginBottom="8dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="模式" android:textColor="@color/txt" android:textSize="16sp" android:textStyle="bold" android:layout_marginBottom="6dp" />
+            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swSleep" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="睡眠風" android:textColor="@color/txt" android:paddingVertical="6dp" />
+            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swAi" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="AI 風" android:textColor="@color/txt" android:paddingVertical="6dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

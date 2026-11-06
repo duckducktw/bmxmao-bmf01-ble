@@ -65,6 +65,22 @@ uart 寫入:  cmd=3203, data=<id><val>
 | `fanctl.py` | 命令行控制工具 |
 | `PROTOCOL.md` / `PROTOCOL.zh.md` | 完整協定規格（英/中） |
 
+## Android app
+
+原生 Android app（Kotlin，無第三方 SDK）放在
+[`android/FanControl`](android/FanControl)，透過 BLE 用逆向出來的協定直接控制風扇。
+深色 Material 3 界面，含電源、風速（1–7）、上下／左右擺頭、擺頭角度（30/60/120°）、
+睡眠／AI 風、定時關機，掃描對話框只列出支援的風扇。
+
+編譯 debug APK（需 JDK 17/21 + Android SDK）：
+
+```bash
+cd android/FanControl
+echo "sdk.dir=$ANDROID_HOME" > local.properties
+./gradlew assembleDebug
+# -> app/build/outputs/apk/debug/app-debug.apk
+```
+
 ## 怎麼逆向出來的
 
 協定擷取自 EasyCon 官方 App 內嵌的微信小程式（`app-service.js` → `SendData.uartSend`、
