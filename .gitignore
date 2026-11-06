@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.so
+*.apk
+*.dex
+*.xapk
+*.wxapkg
+btsnoop*
+bugreport*
+
+functions_observed.json
+FUNCTIONS_OBSERVED.md
